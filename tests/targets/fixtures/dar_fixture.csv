@@ -1,0 +1,6 @@
+xid,date,vendor,source,group,aspect,value
+e8b098cb-74ab-4287-ac3c-ce54ecd25c92,2020-08-14,nielsen,dar,Male,{"target":"Male"},0
+5846659d-1223-4e3d-98c2-dd777609b892,2020-08-14,nielsen,dar,45-54,{"target":"45-54"},1
+54b3f4ce-4ded-4da9-b60f-5fea5d3f17e4,2020-08-14,nielsen,dar,18-49,{"target":"18-49"},0
+058627b7-196e-4e7b-83f3-ae9cec264666,2020-08-14,nielsen,dar,Female,{"target":"Female"},1
+657a92cf-fc9b-4203-8ea5-a9660afec812,2020-08-14,nielsen,dar,25-54,{"target":"25-54"},1

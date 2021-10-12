@@ -1,0 +1,20 @@
+version: "3.8"
+services:
+  spire:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app/
+    depends_on:
+      - postgres
+  postgres:
+    image: postgres:10.15-alpine
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+    volumes:
+      - ./bin/prepare_test_db.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - "5432:5432"

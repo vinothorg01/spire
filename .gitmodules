@@ -1,0 +1,15 @@
+[submodule "include/kalos"]
+	path = include/kalos
+	url = git@github.com:CondeNast/kalos.git
+	branch = release/v1.x
+[submodule "include/spire-astronomer"]
+	path = include/spire-astronomer
+	url = git@github.com:CondeNast/spire-astronomer.git
+	branch = main
+[submodule "include/datasci-common"]
+	path = include/datasci-common
+	url = git@github.com:CondeNast/datasci-common.git
+	branch = master
+[submodule "include/spire-notebooks"]
+	path = include/spire-notebooks
+	url = git@github.com:CondeNast/spire-notebooks.git

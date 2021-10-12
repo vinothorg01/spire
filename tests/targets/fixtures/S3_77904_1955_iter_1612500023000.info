@@ -1,0 +1,17 @@
+{
+    "Files": [
+        {
+            "FileByteSize": 585, 
+            "FileLineCount": 7, 
+            "FileName": "S3_77904_1955_iter_1612500023000.sync", 
+            "FileSequenceNumber": 1, 
+            "md5": "6e97cfc43834bbeff178721121f69da0"
+        }
+    ], 
+    "Totals": {
+        "FileName": "S3_77904_1955_iter_1612500023000.sync", 
+        "TotalByteSize": 585, 
+        "TotalNumberFiles": 1, 
+        "TotalNumberLines": 7
+    }
+}

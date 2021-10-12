@@ -1,0 +1,11 @@
+xid,target,vendor,group
+0,1,adobe,16501879
+1,0,adobe,fake_group_id
+2,0,adobe,fake_group_id
+3,1,adobe,16501879
+4,0,adobe,fake_group_id
+5,1,adobe,16501879
+6,1,adobe,16501879
+7,0,adobe,fake_group_id
+8,1,adobe,16501879
+9,0,adobe,fake_group_id

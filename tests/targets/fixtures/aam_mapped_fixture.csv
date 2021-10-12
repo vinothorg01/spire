@@ -1,0 +1,7 @@
+xid,date,vendor,source,group,aspect,value
+0a838749-f9a4-41b0-92ce-c4dec272488b,2021-02-02,adobe,mcid,11940211,{"name":"married"},1.0
+6bb9903f-bcbe-4ae7-a425-640064564bb3,2021-02-03,adobe,mcid,11191954,{"name":"Allergan_JUV_STATUS_Active"},1.0
+6bb9903f-bcbe-4ae7-a425-640064564bb3,2021-02-01,adobe,mcid,11191954,{"name":"Allergan_JUV_STATUS_Active"},1.0
+0a838749-f9a4-41b0-92ce-c4dec272488b,2021-02-02,adobe,mcid,11191954,{"name":"Allergan_JUV_STATUS_Active"},1.0
+6bb9903f-bcbe-4ae7-a425-640064564bb3,2021-02-03,adobe,mcid,18365619,{"name":"TransUnion_Consumer_Finance_Credit_Behavior_Average_Aggregated_Credit_Tiers_Near_Prime_to_Prime_3rd_Quartile"},1.0
+6bb9903f-bcbe-4ae7-a425-640064564bb3,2021-02-01,adobe,mcid,18365619,{"name":"TransUnion_Consumer_Finance_Credit_Behavior_Average_Aggregated_Credit_Tiers_Near_Prime_to_Prime_3rd_Quartile"},1.0

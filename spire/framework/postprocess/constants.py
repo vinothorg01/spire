@@ -1,0 +1,7 @@
+THRESHOLD_OUT_KEY = "output/thresholds"
+SCORE_KEY = "output/scores"
+DATE_VAR = "date"
+SID_VAR = "tid"
+PID_VAR = "pid"
+IN_FORMAT = "parquet"
+OUT_FORMAT = "parquet"
