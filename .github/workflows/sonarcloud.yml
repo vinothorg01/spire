@@ -3,10 +3,10 @@ name: sonarcloud
 on:
   push:
     branches:
-      - master
+      - feature1
   pull_request:
     branches:
-      - feature1
+      - master
 jobs:
   CI-Module:
     name: CI-Module
