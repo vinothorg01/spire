@@ -3,10 +3,10 @@ name: sonarcloud
 on:
   push:
     branches:
-      - feature1
+      - master
   pull_request:
     branches:
-      - master
+      - feature1
 jobs:
   CI-Module:
     name: CI-Module
@@ -20,5 +20,5 @@ jobs:
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
         env:
-          GITHUB_TOKEN: ${{ secrets.G_TOKEN }}  # Needed to get PR information, if any
+          GITHUB_TOKEN: ${{ secrets.G_TOKEN }} 
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
