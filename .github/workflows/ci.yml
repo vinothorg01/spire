@@ -1,7 +1,7 @@
 name: Snyk CI test
-on: push
+on: workflow_dispatch
 jobs:
-  security:
+  snyk-test:
     runs-on: ubuntu-latest
     steps:
       - name: checkout
@@ -10,9 +10,9 @@ jobs:
       - name: requirements
         run: |
           pip3 install -r requirements.txt
-          
+
       - name: Run Snyk to check for vulnerabilities
         uses: snyk/actions/node@master
-        continue-on-error: true
+        #continue-on-error: true
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
