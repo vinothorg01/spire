@@ -1,25 +1,13 @@
-name: Continuous Integration
-on:
-  push:
-    branches: [ feature1 ]
-  pull_request:
-    branches: [ master ]
+name: Snyk CI test
+on: push
 jobs:
-  build-and-test-docker:
+  security:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-        with:
-          submodules: true
-          fetch-depth: 0
-          #ssh-key: ${{ secrets.CONDENAST_DATA_ROBOT_SSH_KEY }}
-
-      - uses: actions/setup-python@v2
-        with:
-          python-version: "3.8.8"
-
-      - name: SonarCloud Scan
-        uses: SonarSource/sonarcloud-github-action@master
+      - name: checkout
+        uses: actions/checkout@master
+        
+      - name: Run Snyk to check for vulnerabilities
+        uses: snyk/actions/node@master
         env:
-          GITHUB_TOKEN: ${{ secrets.G_TOKEN }} 
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
