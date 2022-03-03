@@ -7,9 +7,9 @@ jobs:
       - name: checkout
         uses: actions/checkout@master
         
-      - name: requirements
-        run: |
-          pip3 install -r requirements.txt
+      #- name: requirements
+      #  run: |
+      #    pip3 install -r requirements.txt
 
       - name: Run Snyk to check for vulnerabilities
         uses: snyk/actions/python-3.8@master
@@ -17,9 +17,10 @@ jobs:
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         with:
-          args: --sarif-file-output=snyk.sarif
-          
-      - name: Upload result to GitHub Code Scanning
-        uses: github/codeql-action/upload-sarif@v1
-        with:
-          sarif_file: snyk.sarif
+          #args: --sarif-file-output=snyk.sarif
+          command: monitor
+
+      #- name: Upload result to GitHub Code Scanning
+      #  uses: github/codeql-action/upload-sarif@v1
+      #  with:
+      #    sarif_file: snyk.sarif
