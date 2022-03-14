@@ -1,0 +1,75 @@
+---
+  project_bucket:
+    s3_bucket:
+      dev: "s3://cn-dse-falcon-dev"
+      stg: "s3://cn-dse-falcon-stg"
+      prod: "s3://cn-dse-falcon-prod"
+
+  traffic:
+    event: "pageview"
+    anchor_date: "2016-01-01"
+    default_hours: 48
+    sparrow:
+      confluent: 
+        s3_bucket:
+          dev: "s3://cn-dse-sparrow-prod/raw/delta/"
+          stg: "s3://cn-dse-sparrow-prod/raw/delta/"
+          prod: "s3://cn-dse-sparrow-prod/raw/delta/"
+      data:
+        s3_bucket:
+          dev: "s3://cn-dse-falcon-prod/confluent_sparrow_stream"
+          stg: "s3://cn-dse-falcon-prod/confluent_sparrow_stream"
+          prod: "s3://cn-dse-falcon-prod/confluent_sparrow_stream"
+        checkpoints:
+          dev: "s3://cn-dse-falcon-prod/confluent_sparrow_checkpoints"
+          stg: "s3://cn-dse-falcon-prod/confluent_sparrow_checkpoints"
+          prod: "s3://cn-dse-falcon-prod/confluent_sparrow_checkpoints"
+
+  content:
+    data:
+      s3_bucket:
+        dev: "s3://cn-dse-falcon-dev/data_delta/content_data" # content locations overwritten hourly with live data with revisions for Falcon
+        stg: "s3://cn-dse-falcon-stg/data_delta/content_data"
+        prod: "s3://cn-dse-falcon-prod/data_delta/content_data"
+    
+  socialcopy_data:
+    data:
+      s3_bucket:
+        dev: "s3://cn-dse-falcon-dev/data_delta/socialcopy_data"
+        stg: "s3://cn-dse-falcon-stg/data_delta/socialcopy_data"
+        prod: "s3://cn-dse-falcon-prod/data_delta/socialcopy_data"
+    facebook_page_min_date: "2019-01-01" # to make sure the analysis scripts work fine (fb analysis from 2019)
+    twitter_min_date: "2019-01-01" # to make sure analysis scripts work fine (twitter analysis from 2019)
+  
+  falcon:
+    utm_campaign: "falcon"
+    train_data:
+      s3_bucket:
+        dev: "s3://cn-dse-falcon-dev/data_delta/train_data"
+        stg: "s3://cn-dse-falcon-stg/data_delta/train_data"
+        prod: "s3://cn-dse-falcon-prod/data_delta/train_data"
+    test_data:
+      s3_bucket:
+        dev: "s3://cn-dse-falcon-dev/data_delta/test_data"
+        stg: "s3://cn-dse-falcon-stg/data_delta/test_data"
+        prod: "s3://cn-dse-falcon-prod/data_delta/test_data"
+    outcome_data:
+      s3_bucket:
+        dev: "s3://cn-dse-falcon-dev/outputs_delta/falcon_outcome"
+        stg: "s3://cn-dse-falcon-stg/outputs_delta/falcon_outcome"
+        prod: "s3://cn-dse-falcon-prod/outputs_delta/falcon_outcome"
+    socialflow_queue_posted_data:
+      s3_bucket:
+        dev: "s3://cn-dse-falcon-dev/outputs_delta/socialflow_queue_posted_data"
+        stg: "s3://cn-dse-falcon-stg/outputs_delta/socialflow_queue_posted_data"
+        prod: "s3://cn-dse-falcon-prod/outputs_delta/socialflow_queue_posted_data"
+    never_data:
+      s3_bucket:
+        dev: "s3://cn-dse-falcon-dev/outputs_delta/falcon_never"
+        stg: "s3://cn-dse-falcon-stg/outputs_delta/falcon_never"
+        prod: "s3://cn-dse-falcon-prod/outputs_delta/falcon_never"
+    later_data:
+      s3_bucket:
+        dev: "s3://cn-dse-falcon-dev/outputs_delta/falcon_later"
+        stg: "s3://cn-dse-falcon-stg/outputs_delta/falcon_later"
+        prod: "s3://cn-dse-falcon-prod/outputs_delta/falcon_later"

@@ -1,0 +1,31 @@
+name: Snyk CI test
+on:
+  push:
+    branches:
+      - imagescan
+jobs:
+  snyk-test:
+    runs-on: ubuntu-latest
+    steps:
+    - name: checkout
+      uses: actions/checkout@master
+      
+    #- name: requirements
+    #  run: |
+    #    pip3 install -r requirements.txt
+
+    - name: Run Snyk to check code vulnerabilities
+      uses: snyk/actions/python-3.8@master
+      continue-on-error: true
+      env:
+        SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+      with:
+        #args: --sarif-file-output=snyk.sarif
+        command: monitor
+
+    - name: Run Snyk to check Docker image for vulnerabilities
+      uses: snyk/actions/docker@master
+      env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+      with:
+          image: ./Dockerfile
