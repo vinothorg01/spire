@@ -41,6 +41,6 @@ jobs:
       env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
       with:
-          REGISTRY: ghcr.io
+          #REGISTRY: ghcr.io
           image: vinothorg01/dimage-testing:latest
           args: --file=Dockerfile

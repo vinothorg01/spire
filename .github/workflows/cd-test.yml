@@ -1,0 +1,19 @@
+name: Snyk CI test
+on:
+  push:
+    branches:
+      - imagescan
+jobs:
+  snyk-test:
+    runs-on: ubuntu-latest
+    steps:
+    - name: checkout
+      uses: actions/checkout@master
+    
+    - name: Build and Tag Docker Image
+      run: |
+        D_IMAGE=ghcr.io/vinothorg01/dimage-testing >> $GITHUB_ENV
+        D_IMAGE_TAG=$D_IMAGE:latest >> $GITHUB_ENV
+        docker build -t $D_IMAGE_TAG .
+        docker images
+        docker image ls
