@@ -16,7 +16,7 @@ jobs:
 
     - name: Run Snyk to check code vulnerabilities
       uses: snyk/actions/python-3.8@master
-      continue-on-error: true
+      continue-on-error: true 3
       env:
         SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
       with:
@@ -28,4 +28,4 @@ jobs:
       env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
       with:
-          image: ./Dockerfile
+          image: Dockerfile
