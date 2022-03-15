@@ -38,9 +38,11 @@ jobs:
 
     - name: Run Snyk to check Docker image for vulnerabilities
       uses: snyk/actions/docker@master
+      continue-on-error: true
       env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
       with:
           #REGISTRY: ghcr.io
           image: ghcr.io/vinothorg01/dimage-testing
           args: --file=Dockerfile
+          command: monitor
