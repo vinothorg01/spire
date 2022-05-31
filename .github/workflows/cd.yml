@@ -25,6 +25,7 @@ jobs:
         D_IMAGE=ghcr.io/vinothorg01/dimage-testing >> $GITHUB_ENV
         D_IMAGE_TAG=$D_IMAGE:latest >> $GITHUB_ENV
         docker build -t $D_IMAGE_TAG .
+        docker image ls
         docker push $D_IMAGE --all-tags
 
     - name: Run Snyk to check code vulnerabilities
