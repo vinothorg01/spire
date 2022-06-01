@@ -39,9 +39,9 @@ jobs:
       uses: aquasecurity/trivy-action@master
       with:
         image-ref: 'ghcr.io/vinothorg01/dimage-testing:latest'
-        format: 'table'
-        output: 'trivy-results.txt'
+        format: 'json'
+        output: 'trivy-results.json'
 
     - name: view trivy result
       run: |
-        cat trivy-results.txt
+        cat trivy-results.json
