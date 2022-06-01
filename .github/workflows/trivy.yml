@@ -15,7 +15,7 @@ jobs:
         PAT: ${{ secrets.G_TOKEN }}
         USERNAME: ${{ secrets.G_USERNAME }}
       run: echo $PAT | docker login ghcr.io -u $USERNAME --password-stdin
-    
+
     - name: Build and Tag Docker Image
       run: |
         D_IMAGE=ghcr.io/vinothorg01/dimage-testing >> $GITHUB_ENV
@@ -35,13 +35,13 @@ jobs:
     #  with:
     #    sarif_file: 'trivy-results.sarif'
 
-      - name: Run Trivy vulnerability scanner
-        uses: aquasecurity/trivy-action@master
-        with:
-          image-ref: 'ghcr.io/vinothorg01/dimage-testing:latest'
-          format: 'table'
-          output: 'trivy-results.txt'
+    - name: Run Trivy vulnerability scanner
+      uses: aquasecurity/trivy-action@master
+      with:
+        image-ref: 'ghcr.io/vinothorg01/dimage-testing:latest'
+        format: 'table'
+        output: 'trivy-results.txt'
 
-      - name: view trivy result
-        run: |
-          cat trivy-results.txt
+    - name: view trivy result
+      run: |
+        cat trivy-results.txt
