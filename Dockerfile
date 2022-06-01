@@ -20,7 +20,7 @@ ENV MLFLOW_TRACKING_URI databricks
 ENV TZ UTC
 
 # add to github repo
-LABEL org.opencontainers.image.source https://github.com/condenast/falcon-e2
+LABEL org.opencontainers.image.source https://github.com/vinothorg01/spire
 # create symlink for python 3.8 and pip3.8
 RUN ln -s /databricks/python3/bin/python3.8 /usr/bin/python
 RUN ln -s /databricks/python3/bin/pip3.8 /usr/bin/pip

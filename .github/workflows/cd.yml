@@ -2,7 +2,7 @@ name: Snyk CI test
 on:
   push:
     branches:
-      - imagescan
+      - imagescan1
 jobs:
   snyk-test:
     runs-on: ubuntu-latest
