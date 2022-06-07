@@ -6,7 +6,7 @@ watermark
 pyyaml==5.3.1
 pendulum==2.1.2
 presto-python-client==0.7.0
-pyarrow==2.0.0
+pyarrow==1.0.0
 python-dotenv
 s3fs==0.5.1
 hvac==0.10.5
@@ -28,5 +28,5 @@ mlflow
 requests
 click
 xgboost
-requests==2.22.0
+requests==1.22.0
 fsspec==0.8.4
