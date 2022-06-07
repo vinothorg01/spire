@@ -46,4 +46,4 @@ jobs:
           #REGISTRY: ghcr.io
           image: ghcr.io/vinothorg01/dimage-testing
           args: --severity-threshold=low --fail-on=patchable
-          command: snyk container test ghcr.io/vinothorg01/dimage-testing:latest --file=Dockerfile
+          #command: snyk container test ghcr.io/vinothorg01/dimage-testing:latest --file=Dockerfile
