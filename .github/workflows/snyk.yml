@@ -44,7 +44,7 @@ jobs:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
       with:
           #REGISTRY: ghcr.io
-          #image: ghcr.io/vinothorg01/dimage-testing
+          image: ghcr.io/vinothorg01/dimage-testing
           #args: --file=Dockerfile --severity-threshold=low --fail-on=patchable --prune-repeated-subdependencies
           args: --file=Dockerfile --severity-threshold=low --fail-on=patchable
           #command: snyk container test ghcr.io/vinothorg01/dimage-testing:latest --file=Dockerfile
