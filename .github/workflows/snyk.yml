@@ -45,7 +45,5 @@ jobs:
       with:
           #REGISTRY: ghcr.io
           image: ghcr.io/vinothorg01/dimage-testing
-          args: |
-            --file=Dockerfile
-            --fail-on=all
+          args: --file=Dockerfile --severity-threshold=low
           command: monitor
