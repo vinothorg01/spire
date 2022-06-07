@@ -1,4 +1,4 @@
-FROM databricksruntime/standard:9.x
+FROM databricksruntime/standard:7.x
 
 # updates and install ubuntu packages
 RUN apt-get update \
