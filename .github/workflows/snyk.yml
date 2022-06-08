@@ -26,7 +26,7 @@ jobs:
         #docker push $D_IMAGE --all-tags
 
     - name: Run Snyk to check code vulnerabilities
-      id: id: snykcodetest
+      id: snykcodetest
       uses: snyk/actions/python-3.8@master
       continue-on-error: false
       env:
