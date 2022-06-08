@@ -26,6 +26,7 @@ jobs:
         #docker push $D_IMAGE --all-tags
 
     - name: Run Snyk to check code vulnerabilities
+      id: id: snykcodetest
       uses: snyk/actions/python-3.8@master
       continue-on-error: false
       env:
@@ -36,6 +37,7 @@ jobs:
         #command: monitor
 
     - name: Run Snyk to check Docker image for vulnerabilities
+      id: snykcontainertest
       uses: snyk/actions/docker@master
       continue-on-error: false
       env:
@@ -48,5 +50,6 @@ jobs:
           #command: snyk container test ghcr.io/vinothorg01/dimage-testing:latest --file=Dockerfile
 
     - name: Reporting
+      if: steps.snykcodetest.outcome == 'success' && steps.snykcontainertest.outcome == 'success'
       run: |
         echo "this is the end of workflow"
