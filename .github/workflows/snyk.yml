@@ -45,3 +45,7 @@ jobs:
           #args: --file=Dockerfile --severity-threshold=low --fail-on=patchable --prune-repeated-subdependencies
           args: --file=Dockerfile --severity-threshold=high --fail-on=upgradable
           #command: snyk container test ghcr.io/vinothorg01/dimage-testing:latest --file=Dockerfile
+
+    - name: Reporting
+      run: |
+        echo "this is the end of workflow"
