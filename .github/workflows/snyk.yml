@@ -34,6 +34,11 @@ jobs:
       with:
         args: --severity-threshold=high --fail-on=upgradable --sarif-file-output=snyk.sarif
 
+    - name: Upload code vulnerabilities result to GitHub Code Scanning
+      uses: github/codeql-action/upload-sarif@v1
+      with:
+        sarif_file: snyk.sarif
+
     - name: Run Snyk to check Docker image for vulnerabilities
       id: snykcontainertest
       uses: snyk/actions/docker@master
@@ -46,12 +51,10 @@ jobs:
           args: --file=Dockerfile --severity-threshold=high --fail-on=upgradable --sarif-file-output=snyk1.sarif
           #command: snyk container test ghcr.io/vinothorg01/dimage-testing:latest --file=Dockerfile
 
-    - name: Upload result to GitHub Code Scanning
+    - name: Upload Docker image vulnerabilities result to GitHub Code Scanning
       uses: github/codeql-action/upload-sarif@v1
       with:
-        sarif_file: |
-          snyk.sarif
-          snyk1.sarif
+        sarif_file: snyk1.sarif
 
     - name: Reporting
       if: steps.snykcodetest.outcome == 'success' && steps.snykcontainertest.outcome == 'success'
