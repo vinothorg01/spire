@@ -64,4 +64,4 @@ jobs:
     - name: Reporting
       if: steps.snykcodetest.outcome == 'success' && steps.snykcontainertest.outcome == 'success'
       run: |
-        echo "this is the end of workflow"
+        echo "This is the end of workflow"
