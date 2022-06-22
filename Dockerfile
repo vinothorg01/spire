@@ -27,7 +27,7 @@ RUN ln -s /databricks/python3/bin/pip3.8 /usr/bin/pip
 
 COPY requirements.txt /tmp/requirements.txt
 
-RUN pip install -r /tmp/requirements.txt --no-cache-dir
+RUN pip install -r /tmp/requirements.txt --no-cache-dir --skip-unresolved
 
 COPY . /tmp/falcon
 
