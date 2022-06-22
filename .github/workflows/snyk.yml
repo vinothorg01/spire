@@ -11,11 +11,11 @@ jobs:
     - name: checkout
       uses: actions/checkout@master
 
-    - name: Login Docker
-      env:
-        PAT: ${{ secrets.G_TOKEN }}
-        USERNAME: ${{ secrets.G_USERNAME }}
-      run: echo $PAT | docker login ghcr.io -u $USERNAME --password-stdin
+    #- name: Login Docker
+    #  env:
+    #    PAT: ${{ secrets.G_TOKEN }}
+    #    USERNAME: ${{ secrets.G_USERNAME }}
+    #  run: echo $PAT | docker login ghcr.io -u $USERNAME --password-stdin
     
     - name: Build and Tag Docker Image
       run: |
@@ -61,7 +61,7 @@ jobs:
     #  with:
     #    sarif_file: snyk.sarif
 
-    - name: Reporting
-      if: steps.snykcodetest.outcome == 'success' && steps.snykcontainertest.outcome == 'success'
-      run: |
-        echo "This is the end of workflow"
+    #- name: Reporting
+    #  if: steps.snykcodetest.outcome == 'success' && steps.snykcontainertest.outcome == 'success'
+    #  run: |
+    #    echo "This is the end of workflow"
