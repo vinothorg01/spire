@@ -35,10 +35,10 @@ jobs:
         #args: --severity-threshold=high --fail-on=upgradable --sarif-file-output=snyk.sarif
         args: --sarif-file-output=snyk.sarif --severity-threshold=low
 
-    #- name: Upload code vulnerabilities result to GitHub Code Scanning
-    #  uses: github/codeql-action/upload-sarif@v2
-    #  with:
-    #    sarif_file: snyk.sarif
+    - name: Upload code vulnerabilities result to GitHub Code Scanning
+      uses: github/codeql-action/upload-sarif@v2
+      with:
+        sarif_file: snyk.sarif
 
     - name: Delete previous sarif file
       run: rm -rf snyk.sarif
@@ -56,10 +56,10 @@ jobs:
           args: --file=Dockerfile --sarif-file-output=snyk.sarif --severity-threshold=high
           #command: snyk container test ghcr.io/vinothorg01/dimage-testing:latest --file=Dockerfile
 
-    #- name: Upload Docker image vulnerabilities result to GitHub Code Scanning
-    #  uses: github/codeql-action/upload-sarif@v2
-    #  with:
-    #    sarif_file: snyk.sarif
+    - name: Upload Docker image vulnerabilities result to GitHub Code Scanning
+      uses: github/codeql-action/upload-sarif@v2
+      with:
+        sarif_file: snyk.sarif
 
     #- name: Reporting
     #  if: steps.snykcodetest.outcome == 'success' && steps.snykcontainertest.outcome == 'success'
